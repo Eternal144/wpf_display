@@ -1,0 +1,57 @@
+﻿<Page x:Class="WpfApp3.IndexPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp3"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page1">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="200" />
+            <RowDefinition  Height="100" />
+            <RowDefinition  Height="100" />
+            <RowDefinition  Height="100" />
+            <RowDefinition  Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel  Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" >
+            <Label Content="界别: "  FontSize="18"  HorizontalAlignment="Left" Height="30"  VerticalAlignment="Center" RenderTransformOrigin="1.571,2.992"/>
+            <ComboBox x:Name="year" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="250" SelectionChanged="year_SelectionChanged"   >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Year}" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+
+        <StackPanel  Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label Content="专业: "  FontSize="18"  HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <ComboBox x:Name="major" HorizontalAlignment="Left" VerticalAlignment="Center" Width="250" SelectionChanged="major_SelectionChanged"   >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Major}" FontSize="16"  HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+
+        <StackPanel  Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label Content="班级: "  FontSize="18"  HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+            <ComboBox x:Name="classes" HorizontalAlignment="Left" VerticalAlignment="Center" Width="250" SelectionChanged="classes_SelectionChanged"   >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding SClass}" FontSize="16"  HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+        <Button Content="Button" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="30px" Width="75" Click="Button_Click" />
+    </Grid>
+</Page>
